@@ -69,3 +69,7 @@ def test_grayscale():
     assert ob.shape == (210, 160, 1)
     ob = env.render('grayscale_array')
     assert ob.shape == (210, 160, 1)
+
+def test_override():
+    env = envs.make('Pong-v0', frameskip=0)
+    assert env.env.frameskip == 0
